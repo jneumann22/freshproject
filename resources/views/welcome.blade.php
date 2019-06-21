@@ -72,14 +72,17 @@
        <p>We'll send you exciting updates and interesting news from our office! <br> Just enter your name and email below and you're all set!</p>
         <form> 
        <label for='name'> Name </label>
-       <input type = 'text' id='name' placeholder = "First Name">
+       <input type = 'text' id='name' required v-model="newUser.name" placeholder = "First Name">
        <label for="email">Email</label>
-       <input type="text" id = 'email' placeholder = "Email">
+       <input type="email" id = 'email' required v-model="newUser.email" placeholder = "Email">
 
-       <input type="submit" value = "SIGN UP">
+       <input type="submit" @click.prevent="createUser()" value = "SIGN UP">
 
 
         </form>
         </div>
+        <script type="text/javascript" src="/js/app.js"></script>
     </body>
+
+
 </html>

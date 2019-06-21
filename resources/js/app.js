@@ -19,7 +19,7 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -29,4 +29,25 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
+
+    data: {
+        users: [],
+        hasError: true,
+        name: '',
+        email: '',
+        newUser: { 'name': '','email': ''},
+       },
+
+    methods: {
+    createUser: function createUser() {
+      var _this = this;
+      var input = this.newUser;
+
+        this.hasError = true;
+        axios.post('/vueitems', input).then(function (response) {
+          _this.newUser = { 'name': '', 'email': ''};
+        });
+      }
+    },
+
 });
