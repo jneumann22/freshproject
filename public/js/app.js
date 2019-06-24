@@ -49188,6 +49188,7 @@ var app = new Vue({
           'email': ''
         };
       });
+      this.$router.push('thank you');
     }
   }
 });

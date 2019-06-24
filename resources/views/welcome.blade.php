@@ -10,7 +10,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
-        <!-- <style>
+        <style>
             html, body {
                 background-color: #fff;
                 color: #636b6f;
@@ -20,66 +20,95 @@
                 margin: 0;
             }
 
-            .full-height {
-                height: 100vh;
+            input:focus {
+                outline: none;
+            }
+            .label {
+                margin-bottom: 5px;
+                font-family: 'Nunito';
+                font-weight: 20px;
+                font-size: 10px;
+                margin-top: 30px;
+            }
+            .intro {
+                font-family: 'Nunito', sans-serif;
+                font-weight: 100;
+                margin-bottom: 25px;
             }
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
+            .holder {
+                margin-left: 100px;
+                margin-top: 100px;
             }
 
-            .position-ref {
-                position: relative;
+            .header {
+                font-family: 'Nunito', sans-serif;
+                font-weight: 400px;
             }
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
+            .button {
+                background-color:#72f3a8;
+	            display:inline-block;
+	            cursor:pointer;
+	            color:#0d0c0d;
+	            font-family: 'Nunito';
+                font-size:15px;
+	            padding:21px 76px;
+	            text-decoration:none;
+                text-shadow:0px 1px 0px #2f6627;
+                margin-top: 40px;
+            }
+            .button:active {
+	            position:relative;
+	            top:1px;
             }
 
-            .content {
-                text-align: center;
+            .inputs {
+                padding: 8px;
+                display: block;
+                border: none;
+                border-bottom: 1px solid #ccc;
+                width: 300px;
             }
 
-            .title {
-                font-size: 84px;
-            }
+           
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            } -->
-        <!-- </style> -->
+        <!-- </style>
     </head>
     <body>
     <div id = "app">
-       <h1>Sign Up for Fresh Interactive!</h1>
+        <div class = 'holder'>
+       <h1 class = 'header'>Sign Up for Fresh Interactive!</h1>
 
        
 
-       <p>We'll send you exciting updates and interesting news from our office! <br> Just enter your name and email below and you're all set!</p>
-        <form> 
-       <label for='name'> Name </label>
-       <input type = 'text' id='name' required v-model="newUser.name" placeholder = "First Name">
-       <label for="email">Email</label>
-       <input type="email" id = 'email' required v-model="newUser.email" placeholder = "Email">
+       <p class = 'intro'>We'll send you exciting updates and interesting news from our office! <br> Just enter your name and email below and you're all set!</p>
 
-       <input type="submit" @click.prevent="createUser()" value = "SIGN UP">
+       
+        <form> 
+        <div class ='label'>
+       Name*
+       </div>
+        <div class = 'formOne'>
+       <input class = 'inputs' type = 'text' id='name' required v-model="newUser.name" placeholder = "First Name">
+
+       </div>
+
+       <div class ='label'>
+       Email*
+       </div>
+       <div class = 'formTwo'>
+       <input class = 'inputs' type="email" id = 'email' required v-model="newUser.email" placeholder = "Email">
+       </div>
+        
+       <div>
+       <input class = 'button' type="submit" @click.stop.prevent="createUser()" value = "SIGN UP">
+       </div>
 
 
         </form>
+        
+        </div>
         </div>
         <script type="text/javascript" src="/js/app.js"></script>
     </body>

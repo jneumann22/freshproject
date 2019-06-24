@@ -38,6 +38,8 @@ const app = new Vue({
         newUser: { 'name': '','email': ''},
        },
 
+    
+
     methods: {
     createUser: function createUser() {
       var _this = this;
