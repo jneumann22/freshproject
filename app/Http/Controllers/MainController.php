@@ -12,6 +12,6 @@ class MainController extends Controller {
 		$data->name = $request->name;
 		$data->email = $request->email;
 		$data->save ();
-		return redirect()->route('login');
+		return $data;
 	}
 }

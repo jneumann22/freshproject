@@ -17,7 +17,7 @@ Route::get ( '/', function () {
 
 
 Route::get ( '/thankyou', function () {
-	return view ( 'thankyou' );
+	return view ('thankyou');
 } );
 
 Route::post ( '/vueitems', 'MainController@storeItem' );

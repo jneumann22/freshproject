@@ -8,6 +8,7 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -27,6 +28,8 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+
+
 const app = new Vue({
     el: '#app',
 
@@ -36,6 +39,7 @@ const app = new Vue({
         name: '',
         email: '',
         newUser: { 'name': '','email': ''},
+        finished: true,
        },
 
     
@@ -48,7 +52,9 @@ const app = new Vue({
         this.hasError = true;
         axios.post('/vueitems', input).then(function (response) {
           _this.newUser = { 'name': '', 'email': ''};
-        });
+          _this.finished = false;
+        })
+        
       }
     },
 

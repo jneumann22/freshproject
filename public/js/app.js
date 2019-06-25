@@ -49174,7 +49174,8 @@ var app = new Vue({
     newUser: {
       'name': '',
       'email': ''
-    }
+    },
+    finished: true
   },
   methods: {
     createUser: function createUser() {
@@ -49187,8 +49188,8 @@ var app = new Vue({
           'name': '',
           'email': ''
         };
+        _this.finished = false;
       });
-      this.$router.push('thank you');
     }
   }
 });

@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>Fresh Project</title>
 
@@ -71,13 +72,23 @@
                 width: 300px;
             }
 
+            .thanks {
+                display:block;
+                justify-content:center;
+                font-size: 30px;
+            }
+
+            .thankyou {
+                text-align: center;
+            }
+
            
 
         <!-- </style>
     </head>
     <body>
     <div id = "app">
-        <div class = 'holder'>
+        <div class = 'holder' v-if ="finished">
        <h1 class = 'header'>Sign Up for Fresh Interactive!</h1>
 
        
@@ -93,20 +104,23 @@
        <input class = 'inputs' type = 'text' id='name' required v-model="newUser.name" placeholder = "First Name">
 
        </div>
-
        <div class ='label'>
        Email*
        </div>
        <div class = 'formTwo'>
        <input class = 'inputs' type="email" id = 'email' required v-model="newUser.email" placeholder = "Email">
        </div>
-        
        <div>
        <input class = 'button' type="submit" @click.stop.prevent="createUser()" value = "SIGN UP">
        </div>
 
 
         </form>
+        
+        </div>
+        <div class = 'thanks' v-if="finished === false">
+        <p class = 'thankyou'> Thanks for Signing up For Fresh! </p> 
+        
         
         </div>
         </div>
