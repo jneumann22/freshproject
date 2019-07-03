@@ -10,17 +10,19 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Mail\TestEmail;
+
 
 Route::get ( '/', function () {
 	return view ( 'welcome' );
 } );
 
 
-Route::get ( '/thankyou', function () {
-	return view ('thankyou');
-} );
-
 Route::post ( '/vueitems', 'MainController@storeItem' );
 
-Route::post('/send', 'EmailController@send');
+Route::get('/send', function () {
+    Mail::to('jneu2k@gmail.com')->send(new TestEmail);
+
+    return view('emails.mail');
+});
 

@@ -54,6 +54,8 @@ const app = new Vue({
           _this.newUser = { 'name': '', 'email': ''};
           _this.finished = false;
         })
+
+        axios.get('/send')
         
       }
     },

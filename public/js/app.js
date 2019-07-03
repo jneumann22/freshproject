@@ -49190,6 +49190,7 @@ var app = new Vue({
         };
         _this.finished = false;
       });
+      axios.get('/send');
     }
   }
 });

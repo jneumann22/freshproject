@@ -11,9 +11,8 @@ class EmailController extends Controller
 {
     public function send(Request $request)
     {
-        $data = ['message' => 'This is a test!'];
 
-        Mail::to('jneu2k@gmail.com')->send(new TestEmail($data));
+        Mail::to('jneu2k@gmail.com')->send(new TestEmail);
 
         return response()->json(['message' => 'Request completed']);
     }

@@ -9,24 +9,10 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 
 class TestEmail extends Mailable
 {
-    use Queueable, SerializesModels;
-
-    public $data;
-
-    public function __construct($data)
-    {
-        $this->data = $data;
-    }
-
     public function build()
     {
-        $address = 'jonathanHneumann@gmail.com';
-        $subject = 'This is a demo!';
-        $name = 'Jane Doe';
-        
-        return $this->view('emails.test')
-                    ->from($address, $name)
-                    ->subject($subject)
-                    ->with([ 'message' => $this->data['message'] ]);
+        return $this->from('jonathanHneumann@gmail.com', 'Fresh Interactive')
+            ->subject('New sign up')
+            ->view('emails.mail');
     }
 }
